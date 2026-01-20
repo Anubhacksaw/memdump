@@ -26,7 +26,7 @@ MemDump is a powerful, production-grade Python utility designed for mobile secur
 Installation
 
     Clone the repository:
-    git clone https://github.com/yourusername/memdump.git
+    git clone https://github.com/Anubhacksaw/memdump.git
     cd memdump
 
     Install dependencies:
