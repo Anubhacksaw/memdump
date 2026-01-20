@@ -26,14 +26,10 @@ MemDump is a powerful, production-grade Python utility designed for mobile secur
 Installation
 
     Clone the repository:
-    Bash
-
     git clone https://github.com/yourusername/memdump.git
     cd memdump
 
     Install dependencies:
-    Bash
-
     pip install -r requirements.txt
 
 🛠️ Usage
@@ -42,9 +38,8 @@ Make sure your Android device is connected via USB and the target app is running
 1. Basic Scan (Recommended)
 
 Dumps memory, extracts strings to a text file, and cleans up temporary binaries.
-Bash
 
-python memdump.py -p "com.example.bankingapp" -o secrets.txt
+python memdump.py -p "Process Name" -o dump.txt
 
 2. Keep Raw Binary Files
 
@@ -56,26 +51,23 @@ python memdump.py -p "App Name" -o output.txt --keep-bin
 3. Debug Mode
 
 Save a detailed log of the entire extraction process for troubleshooting.
-Bash
 
-python memdump.py -p "App Name" -o output.txt --log debug_dump.log
+python memdump.py -p "Process Name" -o output.txt --log debug_dump.log
 
 ⚙️ Command Line Arguments
 Argument	Description	Required
--p, --package	The target App Name or Package ID (e.g., com.facebook.katana).	Yes
+-p, --Process Name	The target App Process Name (e.g., WhatsApp).	Yes
 -o, --output	The filename for the final extracted text report.	Yes
 --log	Path to save a detailed debug log file.	No
 --keep-bin	Flag to skip deletion of raw .bin dump files after extraction.	No
 🧪 Example Workflow
 
-    Launch the Target App: Open the banking app on your rooted device.
+    Launch the Target App: Open the app on your rooted device.
 
     Run MemDump:
-    Bash
+    python memdump.py -p "Target Process" -o dump.txt
 
-    python memdump.py -p "Target Bank" -o bank_dump.txt
-
-    Analyze Results: Open bank_dump.txt and search for sensitive keywords:
+    Analyze Results: Open dump.txt and search for sensitive keywords:
 
         Bearer (Auth Tokens)
 
